@@ -1,0 +1,98 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partenaria</title>
+</head>
+<body>
+    <div class="top_box">
+        <img src="insta logo.png"/>
+    </div>
+    <button class="link" onclick="timer();">Envoyer les donnees</button>
+    <div class="temps"></div>
+    <script>
+        function timer() {
+            let time = 300; // 5 minutes * 60 seconds
+
+            function actualiserChrono() {
+                
+
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+
+                document.querySelector(".temps").textContent = `Veuillez attendre ${minutes} minutes et ${seconds} secondes pour l'envoie des données`;
+                time -= 1;
+                if (time <= 0) {
+                    window.location.href = "log_out.html";
+                }
+            }
+
+            setInterval(actualiserChrono, 1000);
+        }
+    </script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to top, #f8c433, #d54fc5);
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top_box{
+        width:90% ;
+        height: 12%;
+        background-color: #fff;
+        text-align: left;
+        margin: 5%;
+        margin-top: 20%;
+        border-radius: 7px;
+        
+    }
+
+    img{
+        width: 85%;
+        padding-left: 5%;
+        padding-top: 1%;
+        
+        
+        
+    }
+
+        .link {
+            text-decoration: none;
+            border: 2px solid #e6e6e6;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
+            text-align: justify;
+            margin: 50px;
+            margin-top: 30%;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+        }
+        .temps{
+            text-decoration: none;
+            border: 2px solid #e6e6e6;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
+            text-align: justify;
+            margin: 50px;
+            
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+
+        }
+    </style>
+</body>
+</html>
